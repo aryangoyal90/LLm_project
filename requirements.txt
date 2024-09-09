@@ -1,0 +1,6 @@
+streamlit
+PyPDF2
+langchain
+langchain-community==0.0.36
+qdrant-client
+langchain_google_genai
