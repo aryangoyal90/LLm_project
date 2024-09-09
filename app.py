@@ -37,9 +37,9 @@ def get_vector_store(text_chunks):
     qdrant_store = Qdrant.from_texts(
         texts=text_chunks,
         embedding=embeddings,
-        url="https://5d4d5abb-83e0-497b-a7cc-5f3f9ac15088.us-east4-0.gcp.cloud.qdrant.io:6333",
-        api_key='AxKBKyUeJITGfgfhx6MAUcNj@cujDcH_YP70jPwQx14GIi7nd5_Tew', #replace with url, apikey and collection_name
-        collection_name="new_collec"
+        url=[REPLACE WITH YOUR CLUSTER URL],
+        api_key=[REPLACE WITH YOUR API_KEY], #replace with url, apikey and collection_name
+        collection_name=[your collection_name]
 )
     
 def get_conversational_chain(): 
@@ -59,12 +59,12 @@ def user_input():
     embeddings = OllamaEmbeddings(model='llama2', temperature=1)
 
     client = qdrant_client.QdrantClient(
-            url="https://5d4d5abb-83e0-497b-a7cc-5f3f9ac15088.us-east4-0.gcp.cloud.qdrant.io:6333", 
-            api_key='AxKBKyUeJITGfgfhx6MAUcNj@cujDcH_YP70jPwQx14GIi7nd5_Tew'
+            url=[REPLACE WITH YOUR CLUSTER URL], 
+            api_key=[REPLACE WITH YOUR API_KEY]
     ) # For Qdrant Cloud, None for local instance
 
     doc_store= Qdrant(
-        client=client, collection_name="new_collec", 
+        client=client, collection_name=[your collection_name], 
         embeddings=embeddings,
     )
 
