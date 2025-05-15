@@ -1,4 +1,4 @@
-# LLM HR replacement Chatbot
+# ResuMate — An Conversational JD Analysis Using LLM's for Resume Shortlisting
 (users can change their local model with ease)
 (Project is Prompt versatile)
 
